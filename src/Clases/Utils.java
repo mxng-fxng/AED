@@ -1,21 +1,28 @@
+//17 septiembre 2025
 package Clases;
 
-public class Pair <X,Y> {
+import es.upm.aedlib.indexedlist.IndexedList;
+import es.upm.aedlib.indexedlist.ArrayIndexedList;
 
-	private X x;
-	private Y y;
-	
-	Pair (X x, Y y){
-	this.x = x;
-	this.y = y;
+Public class Utils {
+
+	//Busca e dentro de la lista l, l no esta ordenada
+	public static boolean member (IndexedList<Integer> l, Integer e){
+		int index = 0;
+		boolean encontrado = false;
+		while(!encontrado && index <l.size()){
+			Integer lE = l.get(index);
+			encontrado = e.equals(lE);
+			index++:
+		}
+
+		return encontrado;
 	}
 
-}
-
-Public class 17sept {
-    Public static void main (String [] args){
-        p1 = new Pair <Integer, Integer>(2,3);
-        p2 = new Pair <> (2,3);
-        p1.getX();
-    }
+	public static void main (String[]args){
+		ArrayIndexedList<Integer> l = new ArrayIndexedList<>(new Integer[] {1,2,3,4,5,2,-1});
+		System.out.println(l + "¿Tiene 3?" + member (l,3));
+		System.out.println(l +"¿Tiene -1?" + member (l,-1));
+		System.out.println(l +"¿Tiene 22?" + member (l,22));
+	}
 }
